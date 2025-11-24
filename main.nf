@@ -7,8 +7,6 @@
 ----------------------------------------------------------------------------------------
 */
 
-ch_configfile = params.configfile ? Channel.fromPath(params.configfile).collect() : []
-
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     IMPORT FUNCTIONS / MODULES / SUBWORKFLOWS / WORKFLOWS
@@ -18,7 +16,6 @@ ch_configfile = params.configfile ? Channel.fromPath(params.configfile).collect(
 include { GRZPREPARATION  } from './workflows/grzpreparation'
 include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_grzpreparation_pipeline'
 include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_grzpreparation_pipeline'
-include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_grzpreparation_pipeline'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -26,10 +23,7 @@ include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_grzp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-// TODO nf-core: Remove this line if you don't need a FASTA file
-//   This is an example of how to use getGenomeAttribute() to fetch parameters
-//   from igenomes.config using `--genome`
-params.fasta = getGenomeAttribute('fasta')
+ch_configfile = params.configfile ? Channel.fromPath(params.configfile).collect() : []
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
