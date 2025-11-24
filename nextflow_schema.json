@@ -126,6 +126,43 @@
     "properties": {
         "configfile": {
             "type": "string"
+        },
+        "genome": {
+            "type": "string"
+        },
+        "igenomes_base": {
+            "type": "string",
+            "default": "s3://ngi-igenomes/igenomes/"
+        },
+        "igenomes_ignore": {
+            "type": "boolean"
+        },
+        "pipelines_testdata_base_path": {
+            "type": "string",
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/"
+        },
+        "config_profile_name": {
+            "type": "string"
+        },
+        "config_profile_description": {
+            "type": "string"
+        },
+        "custom_config_version": {
+            "type": "string",
+            "default": "master"
+        },
+        "custom_config_base": {
+            "type": "string",
+            "default": "https://raw.githubusercontent.com/nf-core/configs/master"
+        },
+        "config_profile_contact": {
+            "type": "string"
+        },
+        "config_profile_url": {
+            "type": "string"
+        },
+        "fasta": {
+            "type": "string"
         }
     }
 }
