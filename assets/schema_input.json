@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/sci-kai/grzpreparation/main/assets/schema_input.json",
+    "title": "sci-kai/grzpreparation pipeline - params.input schema",
+    "description": "Schema for the file provided with params.input",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "localcaseid": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "local Case ID as sha256s string",
+                "meta": ["id"]
+            },
+            "submissiondir": {
+                "type": "string",
+                "format": "file-path",
+                "exists": true,
+                "errorMessage": "Full Path to submissiondir of localcaseID"
+            }
+        },
+        "required": ["localcaseid", "submissiondir"]
+    }
+}
