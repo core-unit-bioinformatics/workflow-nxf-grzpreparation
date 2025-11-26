@@ -159,6 +159,7 @@ def validateInputSamplesheet(input) {
     def (metas, submissiondirs) = input[1..2]
 
     return [ metas[0], submissiondirs ]
+}
 
 //
 // Generate methods description for MultiQC
