@@ -29,7 +29,7 @@ process ENCRYPT {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        grz-cli: \$( grz-cli --version )
+        grz-cli: \$( grz-cli --version | grep grz-cli | sed 's/^.*grz-cli //g' )
     END_VERSIONS
     """
 
@@ -40,7 +40,7 @@ process ENCRYPT {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        grz-cli: \$( grz-cli --version )
+        grz-cli: \$( grz-cli --version | grep grz-cli | sed 's/^.*grz-cli //g' )
     END_VERSIONS
     """
 }
