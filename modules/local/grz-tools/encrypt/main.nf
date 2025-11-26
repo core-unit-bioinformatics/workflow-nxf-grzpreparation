@@ -25,7 +25,7 @@ process ENCRYPT {
     grz-cli encrypt \\
         ${args} \\
         --submission-dir ${submissiondir} \\
-        -- config-file ${configfile}
+        --config-file ${configfile}
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

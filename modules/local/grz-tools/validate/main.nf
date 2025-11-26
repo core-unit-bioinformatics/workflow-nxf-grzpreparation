@@ -25,7 +25,7 @@ process VALIDATE {
     grz-cli validate \\
         ${args} \\
         --submission-dir ${submissiondir} \\
-        -- config-file ${configfile} \\
+        --config-file ${configfile} \\
         --threads ${task.cpus}
 
     cat <<-END_VERSIONS > versions.yml
