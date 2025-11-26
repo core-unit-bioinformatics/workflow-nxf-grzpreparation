@@ -15,7 +15,7 @@
             },
             "submissiondir": {
                 "type": "string",
-                "format": "file-path",
+                "format": "directory-path",
                 "exists": true,
                 "errorMessage": "Full Path to submissiondir of localcaseID"
             }

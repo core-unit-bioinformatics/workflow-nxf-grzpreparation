@@ -160,9 +160,6 @@
         },
         "config_profile_url": {
             "type": "string"
-        },
-        "fasta": {
-            "type": "string"
         }
     }
 }
