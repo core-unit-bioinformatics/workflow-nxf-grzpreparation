@@ -4,8 +4,8 @@ process ENCRYPT {
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/grz-cli:1.5.0--pyhdfd78af_0' :
-        'biocontainers/grz-cli:1.5.0--pyhdfd78af_0' }"
+        'https://depot.galaxyproject.org/singularity/grz-cli:1.5.1--pyhdfd78af_0' :
+        'biocontainers/grz-cli:1.5.1--pyhdfd78af_0' }"
 
     input:
     tuple val(meta), path(submissiondir)
